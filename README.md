@@ -5,12 +5,12 @@ ASM is the machine language that is readable for humans.
 Instead of relying heavily on the compiler (like in C or other compiled code),
 in asmyou decide how to manage:
 
-> Registers
-> Function calls
-> Stack control
-> How to manage parameters
-> How to return results
-> How to manage memory
+- Registers
+- Function calls
+- Stack control
+- How to manage parameters
+- How to return results
+- How to manage memory
 
 To start creating similitued with out beloved friend C, we will start
 by understanding how to operate with arguments passed into a function.
@@ -62,7 +62,7 @@ file ft_strlen.o
 readelf -s ft_strlen.o
 ```
 
-<Insert a table as example>
+<Insert a table as example-
 
 Compile the main program
 ```
