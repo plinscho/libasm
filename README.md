@@ -2,8 +2,18 @@
 Small assembly files
 
 ASM is the machine language that is readable for humans.
-Instead of relying heavily on the compiler (like in C or other compiled code),
-in asmyou decide how to manage:
+Instead of relying heavily on the compiler (like in C or other compiled code).
+Processor operations mostly involve processing data. 
+This data can be stored in memory and accessed from thereon. 
+However, reading data from and storing data into memory slows down the processor, 
+as it involves complicated processes of sending the data request across the control 
+bus and into the memory storage unit and getting the data through the same channel.
+To speed up the processor operations, the processor includes some internal memory 
+storage locations, called registers. 
+The registers store data elements for processing without having to access the memory.
+A limited number of registers are built into the processor chip.
+
+So, in ASM you decide how to manage:
 
 - Registers
 - Function calls
@@ -11,6 +21,15 @@ in asmyou decide how to manage:
 - How to manage parameters
 - How to return results
 - How to manage memory
+
+An assembly program can be divided into three sections:
+- The data section (section.data)
+    > It's used for declaring initialized data or constants. This data does not change at runtime.
+- The bss section (section.bss)
+    > It's used for declaring variables.
+- The text section (section.text)
+    > It's used for keeping actual code. It has to begin with the declaration "global _start"
+
 
 To start creating similitued with out beloved friend C, we will start
 by understanding how to operate with arguments passed into a function.
@@ -62,7 +81,7 @@ file ft_strlen.o
 readelf -s ft_strlen.o
 ```
 
-<Insert a table as example-
+<Insert a table as example>
 
 Compile the main program
 ```
@@ -77,4 +96,7 @@ gcc ft_strlen.o main.o -o test_strlen
 ./test_strlen
 ```
 
+# REFERENCES
+- https://www.tutorialspoint.com/assembly_programming/index.htm
+- https://pablocorbalann.medium.com/programming-a-hello-world-in-assembly-from-the-first-line-to-the-end-x86-9c48fb499238
 
