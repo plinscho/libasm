@@ -24,7 +24,7 @@ DEPS = $(OBJS:.o=.d)
 all: $(NAME)
 
 main: $(MAIN)
-	$(CC) $(CFLAGS) $(MAIN) -I$(INCDIR) -L -lasm -o main
+	$(CC) $(CFLAGS) $(MAIN) -I$(INCDIR) $(NAME) -o main
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -43,7 +43,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm main
 
 re: fclean all
 
